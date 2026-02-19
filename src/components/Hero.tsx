@@ -1,18 +1,79 @@
-import heroBg from "@/assets/hero-bg.jpg";
-import { ArrowRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import hero1 from "@/assets/hero-1.jpg";
+import hero2 from "@/assets/hero-2.jpg";
+import hero3 from "@/assets/hero-3.jpg";
+import hero4 from "@/assets/hero-4.jpg";
+import hero5 from "@/assets/hero-5.jpg";
+
+const slides = [hero1, hero2, hero3, hero4, hero5];
 
 const Hero = () => {
-  return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-hero-overlay" />
+  const [current, setCurrent] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const goTo = useCallback((index: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrent(index);
+    setTimeout(() => setIsTransitioning(false), 800);
+  }, [isTransitioning]);
+
+  const next = useCallback(() => goTo((current + 1) % slides.length), [current, goTo]);
+  const prev = useCallback(() => goTo((current - 1 + slides.length) % slides.length), [current, goTo]);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Carousel backgrounds */}
+      {slides.map((slide, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url(${slide})`,
+            opacity: i === current ? 1 : 0,
+            zIndex: i === current ? 1 : 0,
+          }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-hero-overlay z-[2]" />
+
+      {/* Nav arrows */}
+      <button
+        onClick={prev}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-secondary/40 backdrop-blur-sm flex items-center justify-center text-secondary-foreground hover:bg-primary/80 hover:text-primary-foreground transition-all"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-secondary/40 backdrop-blur-sm flex items-center justify-center text-secondary-foreground hover:bg-primary/80 hover:text-primary-foreground transition-all"
+        aria-label="Next slide"
+      >
+        <ChevronRight size={24} />
+      </button>
+
+      {/* Dots */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === current ? "bg-primary w-8" : "bg-secondary-foreground/40 hover:bg-secondary-foreground/60"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <p className="text-primary font-body font-semibold tracking-[0.3em] uppercase text-sm mb-4 animate-fade-up">
           Building Your Dreams Since Day One
