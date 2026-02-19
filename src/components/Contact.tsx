@@ -1,5 +1,38 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 
+const contactCards = [
+  {
+    icon: Phone,
+    title: "Call Us",
+    info: "+91 98765 43210",
+    href: "tel:+919876543210",
+    hoverBg: "hover:bg-primary",
+    hoverText: "hover:text-primary-foreground",
+    hoverIcon: "group-hover:text-primary-foreground",
+    hoverInfo: "group-hover:text-primary-foreground/80",
+  },
+  {
+    icon: Mail,
+    title: "Email Us",
+    info: "info@sriramengineers.com",
+    href: "mailto:info@sriramengineers.com",
+    hoverBg: "hover:bg-accent",
+    hoverText: "hover:text-accent-foreground",
+    hoverIcon: "group-hover:text-accent-foreground",
+    hoverInfo: "group-hover:text-accent-foreground/80",
+  },
+  {
+    icon: MapPin,
+    title: "Visit Us",
+    info: "Jharsuguda, Odisha, India",
+    href: undefined,
+    hoverBg: "hover:bg-secondary",
+    hoverText: "hover:text-secondary-foreground",
+    hoverIcon: "group-hover:text-primary",
+    hoverInfo: "group-hover:text-secondary-foreground/80",
+  },
+];
+
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-background">
@@ -12,35 +45,26 @@ const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <a
-            href="tel:+919876543210"
-            className="bg-card rounded-lg p-8 text-center border border-border hover:border-primary/40 hover:shadow-gold transition-all group"
-          >
-            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-              <Phone className="text-primary" size={24} />
-            </div>
-            <h3 className="font-display font-semibold text-lg text-card-foreground mb-1">Call Us</h3>
-            <p className="font-body text-muted-foreground text-sm">+91 98765 43210</p>
-          </a>
-
-          <a
-            href="mailto:info@sriramengineers.com"
-            className="bg-card rounded-lg p-8 text-center border border-border hover:border-primary/40 hover:shadow-gold transition-all group"
-          >
-            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-              <Mail className="text-primary" size={24} />
-            </div>
-            <h3 className="font-display font-semibold text-lg text-card-foreground mb-1">Email Us</h3>
-            <p className="font-body text-muted-foreground text-sm">info@sriramengineers.com</p>
-          </a>
-
-          <div className="bg-card rounded-lg p-8 text-center border border-border">
-            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <MapPin className="text-primary" size={24} />
-            </div>
-            <h3 className="font-display font-semibold text-lg text-card-foreground mb-1">Visit Us</h3>
-            <p className="font-body text-muted-foreground text-sm">Jharsuguda, Odisha, India</p>
-          </div>
+          {contactCards.map((card) => {
+            const Wrapper = card.href ? "a" : "div";
+            return (
+              <Wrapper
+                key={card.title}
+                {...(card.href ? { href: card.href } : {})}
+                className={`group bg-card rounded-lg p-8 text-center border border-border transition-all duration-500 cursor-pointer ${card.hoverBg} hover:border-transparent hover:shadow-gold hover:-translate-y-1`}
+              >
+                <div className={`w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary-foreground/10 transition-colors`}>
+                  <card.icon className={`text-primary transition-colors ${card.hoverIcon}`} size={24} />
+                </div>
+                <h3 className={`font-display font-semibold text-lg text-card-foreground mb-1 transition-colors ${card.hoverText}`}>
+                  {card.title}
+                </h3>
+                <p className={`font-body text-muted-foreground text-sm transition-colors ${card.hoverInfo}`}>
+                  {card.info}
+                </p>
+              </Wrapper>
+            );
+          })}
         </div>
       </div>
     </section>
