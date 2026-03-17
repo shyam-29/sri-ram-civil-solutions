@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
