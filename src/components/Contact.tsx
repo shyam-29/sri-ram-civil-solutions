@@ -4,8 +4,8 @@ const contactCards = [
   {
     icon: Phone,
     title: "Call Us",
-    info: "+91 98765 43210",
-    href: "tel:+919876543210",
+    info: "+91 95218 63833",
+    href: "tel:+919521863833",
     hoverBg: "hover:bg-primary",
     hoverText: "hover:text-primary-foreground",
     hoverIcon: "group-hover:text-primary-foreground",
@@ -14,8 +14,8 @@ const contactCards = [
   {
     icon: Mail,
     title: "Email Us",
-    info: "info@sriramengineers.com",
-    href: "mailto:info@sriramengineers.com",
+    info: "shreeramconstruction0122@gmail.com",
+    href: "mailto:shreeramconstruction0122@gmail.com",
     hoverBg: "hover:bg-accent",
     hoverText: "hover:text-accent-foreground",
     hoverIcon: "group-hover:text-accent-foreground",
@@ -24,7 +24,7 @@ const contactCards = [
   {
     icon: MapPin,
     title: "Visit Us",
-    info: "Jharsuguda, Odisha, India",
+    info: "Shree Ram Complex, Belpahar, Jharsuguda, Odisha 768201",
     href: undefined,
     hoverBg: "hover:bg-secondary",
     hoverText: "hover:text-secondary-foreground",

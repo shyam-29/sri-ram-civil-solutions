@@ -1,4 +1,4 @@
-import { Building2, Home, Ruler, HardHat, PaintBucket, Landmark, ArrowRight } from "lucide-react";
+import { Building2, Home, Ruler, HardHat, PaintBucket, Sun, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -15,8 +15,8 @@ const services = [
   },
   {
     icon: Ruler,
-    title: "Architectural Design",
-    desc: "Modern architectural planning and 3D visualization for your dream project.",
+    title: "Planning & Designing",
+    desc: "Modern architectural planning, structural design, and 3D visualization for your dream project.",
     details: ["2D & 3D Floor Plans", "Structural Engineering Drawings", "3D Walkthrough & Renders", "Government Approval Drawings"],
   },
   {
@@ -32,10 +32,10 @@ const services = [
     details: ["Modular Kitchen & Wardrobes", "False Ceiling & Lighting", "Flooring & Wall Treatments", "Furniture & Decor Planning"],
   },
   {
-    icon: Landmark,
-    title: "Renovation & Remodeling",
-    desc: "Breathe new life into existing structures with our renovation expertise.",
-    details: ["Structural Repairs & Upgrades", "Bathroom & Kitchen Remodeling", "Facade & Exterior Makeover", "Waterproofing & Painting"],
+    icon: Sun,
+    title: "Solar Energy Solutions",
+    desc: "Sustainable solar panel installation for residential and commercial properties to reduce energy costs.",
+    details: ["Rooftop Solar Systems", "Solar Water Heaters", "Net Metering Setup", "Government Subsidy Assistance"],
   },
 ];
 
@@ -49,7 +49,7 @@ const Services = () => {
             Our <span className="text-gradient-gold">Services</span>
           </h2>
           <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto">
-            From concept to completion, we provide comprehensive civil engineering solutions tailored to your needs across Jharsuguda, Sambalpur &amp; Sundargarh.
+            From concept to completion — Planning, Designing, Interior, Construction &amp; Solar. Comprehensive solutions tailored to your needs across Jharsuguda, Sambalpur &amp; Sundargarh.
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, User } from "lucide-react";
 
 const About = () => {
   return (
@@ -8,18 +8,34 @@ const About = () => {
           <div>
             <p className="text-primary font-body font-semibold tracking-[0.2em] uppercase text-sm mb-2">About Us</p>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-secondary-foreground mb-6">
-              Building Trust,<br />
-              <span className="text-gradient-gold">One Project at a Time</span>
+              You Dream It,<br />
+              <span className="text-gradient-gold">We Build It</span>
             </h2>
             <p className="font-body text-secondary-foreground/70 leading-relaxed mb-6">
-              SRI RAM Civil Engineers is a premier construction company serving Jharsuguda, Sambalpur, and Sundargarh. With over a decade of experience, we deliver excellence in residential and commercial construction, ensuring every project meets the highest standards of quality and safety.
+              Shree Ram Construction is a premier construction company founded by <strong className="text-secondary-foreground">ER. Satendra Prasad</strong>, serving Jharsuguda, Sambalpur, and Sundargarh. With years of dedicated experience in Planning, Designing, Interior, Construction, and Solar energy solutions, we deliver excellence in every project we undertake — ensuring the highest standards of quality, safety, and client satisfaction.
             </p>
+
+            {/* Owner Card */}
+            <div className="bg-secondary/50 border border-primary/20 rounded-lg p-5 mb-6 flex items-start gap-4">
+              <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                <User className="text-primary" size={28} />
+              </div>
+              <div>
+                <h4 className="font-display font-bold text-lg text-secondary-foreground">ER. Satendra Prasad</h4>
+                <p className="font-body text-primary text-sm font-semibold">Founder & Proprietor</p>
+                <p className="font-body text-secondary-foreground/60 text-sm mt-1">
+                  A qualified civil engineer with a passion for building dreams into reality. Under his leadership, Shree Ram Construction has completed 150+ projects across Western Odisha, earning a reputation for integrity, quality workmanship, and timely delivery.
+                </p>
+              </div>
+            </div>
+
             <div className="space-y-3">
               {[
                 "Licensed & Certified Engineers",
                 "On-Time Project Delivery",
                 "Transparent Pricing & Budgeting",
                 "Premium Quality Materials",
+                "Solar Energy Solutions",
                 "Post-Construction Support",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">

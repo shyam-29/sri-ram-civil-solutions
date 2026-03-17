@@ -1,6 +1,6 @@
 const WhatsAppButton = () => {
-  const phoneNumber = "919876543210";
-  const message = encodeURIComponent("Hello SRI RAM Engineers! I'm interested in your construction services.");
+  const phoneNumber = "919521863833";
+  const message = encodeURIComponent("Hello Shree Ram Construction! I'm interested in your construction services.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
