@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const Footer = () => {
   return (
@@ -7,17 +8,16 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded bg-primary flex items-center justify-center">
-                <span className="font-display font-bold text-primary-foreground text-lg">SR</span>
-              </div>
+              <img src={logo} alt="Shree Ram Construction Logo" className="w-12 h-10 object-contain rounded" />
               <div>
-                <span className="font-display font-bold text-lg text-secondary-foreground">SRI RAM</span>
-                <span className="block text-xs text-secondary-foreground/60 -mt-1 font-body">Civil Engineers</span>
+                <span className="font-display font-bold text-lg text-secondary-foreground">SHREE RAM</span>
+                <span className="block text-xs text-secondary-foreground/60 -mt-1 font-body">Construction</span>
               </div>
             </div>
-            <p className="font-body text-secondary-foreground/60 text-sm leading-relaxed">
-              Trusted civil engineering company delivering quality construction services across Jharsuguda, Sambalpur, and Sundargarh.
+            <p className="font-body text-secondary-foreground/60 text-sm leading-relaxed mb-2">
+              Trusted construction company delivering quality services in Planning, Designing, Interior, Construction & Solar across Jharsuguda, Sambalpur, and Sundargarh.
             </p>
+            <p className="font-body text-primary text-sm font-semibold italic">"You Dream It, We Build It"</p>
           </div>
 
           <div>
@@ -40,15 +40,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="text-primary shrink-0" size={16} />
-                <span className="font-body text-secondary-foreground/60 text-sm">+91 98765 43210</span>
+                <span className="font-body text-secondary-foreground/60 text-sm">+91 95218 63833</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-primary shrink-0" size={16} />
-                <span className="font-body text-secondary-foreground/60 text-sm">info@sriramengineers.com</span>
+                <span className="font-body text-secondary-foreground/60 text-sm">shreeramconstruction0122@gmail.com</span>
               </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="text-primary shrink-0" size={16} />
-                <span className="font-body text-secondary-foreground/60 text-sm">Jharsuguda, Odisha</span>
+              <div className="flex items-start gap-3">
+                <MapPin className="text-primary shrink-0 mt-0.5" size={16} />
+                <span className="font-body text-secondary-foreground/60 text-sm">Shree Ram Complex, In front of Orchard Hotel, Belpahar, Jharsuguda, Odisha 768201</span>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@ const Footer = () => {
 
         <div className="border-t border-secondary-foreground/10 pt-6 text-center">
           <p className="font-body text-secondary-foreground/40 text-sm">
-            © {new Date().getFullYear()} SRI RAM Civil Engineers. All rights reserved.
+            © {new Date().getFullYear()} Shree Ram Construction. All rights reserved. | ER. Satendra Prasad, Proprietor
           </p>
         </div>
       </div>

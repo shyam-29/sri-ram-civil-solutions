@@ -29,7 +29,6 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Carousel backgrounds */}
       {slides.map((slide, i) => (
         <div
           key={i}
@@ -43,7 +42,6 @@ const Hero = () => {
       ))}
       <div className="absolute inset-0 bg-hero-overlay z-[2]" />
 
-      {/* Nav arrows */}
       <button
         onClick={prev}
         className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-secondary/40 backdrop-blur-sm flex items-center justify-center text-secondary-foreground hover:bg-primary/80 hover:text-primary-foreground transition-all"
@@ -59,7 +57,6 @@ const Hero = () => {
         <ChevronRight size={24} />
       </button>
 
-      {/* Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {slides.map((_, i) => (
           <button
@@ -73,18 +70,17 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <p className="text-primary font-body font-semibold tracking-[0.3em] uppercase text-sm mb-4 animate-fade-up">
-          Building Your Dreams Since Day One
+          You Dream It, We Build It
         </p>
         <h1 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-secondary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-          Quality Civil
+          Shree Ram
           <br />
-          <span className="text-gradient-gold">Engineering Solutions</span>
+          <span className="text-gradient-gold">Construction</span>
         </h1>
         <p className="text-secondary-foreground/70 font-body text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: '0.4s' }}>
-          SRI RAM — Your trusted partner for residential, commercial &amp; industrial construction in Jharsuguda, Sambalpur &amp; Sundargarh.
+          Planning · Designing · Interior · Construction · Solar — Your trusted partner for all construction needs in Jharsuguda, Sambalpur &amp; Sundargarh.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.6s' }}>
           <a
@@ -101,7 +97,6 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: '0.8s' }}>
           {[
             { number: "150+", label: "Projects Completed" },

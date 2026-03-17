@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -21,15 +22,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         <a href="#home" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded bg-primary flex items-center justify-center">
-            <span className="font-display font-bold text-primary-foreground text-lg">SR</span>
-          </div>
+          <img src={logo} alt="Shree Ram Construction Logo" className="w-12 h-10 object-contain rounded" />
           <div>
             <span className="font-display font-bold text-lg text-secondary-foreground tracking-wide">
-              SRI RAM
+              SHREE RAM
             </span>
             <span className="block text-xs text-secondary-foreground/60 -mt-1 font-body">
-              Civil Engineers
+              Construction
             </span>
           </div>
         </a>
@@ -46,7 +45,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="tel:+919876543210"
+            href="tel:+919521863833"
             className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-body font-semibold text-sm hover:shadow-gold transition-shadow"
           >
             <Phone size={16} />
