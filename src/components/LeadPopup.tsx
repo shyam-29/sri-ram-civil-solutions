@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+
 
 const LeadPopup = () => {
   const [open, setOpen] = useState(false);
