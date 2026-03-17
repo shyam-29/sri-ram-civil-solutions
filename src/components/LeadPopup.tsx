@@ -46,7 +46,9 @@ const LeadPopup = () => {
           >
             <X size={20} />
           </button>
-          <img src={logo} alt="Shree Ram Construction" className="w-16 h-12 object-contain mx-auto mb-3 rounded" />
+          <div className="w-12 h-12 rounded bg-primary flex items-center justify-center mx-auto mb-3">
+            <span className="font-display font-bold text-primary-foreground text-lg">SR</span>
+          </div>
           <h3 className="font-display font-bold text-xl text-secondary-foreground">Get a FREE Consultation</h3>
           <p className="font-body text-secondary-foreground/60 text-sm mt-1">Fill the form and ER. Satendra Prasad's team will reach out!</p>
         </div>

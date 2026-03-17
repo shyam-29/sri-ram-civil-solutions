@@ -22,7 +22,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         <a href="#home" className="flex items-center gap-2">
-          <img src={logo} alt="Shree Ram Construction Logo" className="w-12 h-10 object-contain rounded" />
+          <div className="w-10 h-10 rounded bg-primary flex items-center justify-center">
+            <span className="font-display font-bold text-primary-foreground text-lg">SR</span>
+          </div>
           <div>
             <span className="font-display font-bold text-lg text-secondary-foreground tracking-wide">
               SHREE RAM
